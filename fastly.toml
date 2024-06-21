@@ -1,0 +1,18 @@
+authors = ["<oss@fastly.com>"]
+description = "Fastly Compute starter kit for Google Bigquery Connector."
+language = "rust"
+manifest_version = 2
+name = "Connect to Google Bigquery for Rust"
+
+[scripts]
+  build = "cargo build --bin fastly-compute-project --release --target wasm32-wasi --color always"
+
+[local_server]
+
+  [local_server.backends]
+
+    [local_server.backends.bigquery]
+      url = "https://bigquery.googleapis.com/"
+
+    [local_server.backends.idp]
+      url = "https://oauth2.googleapis.com/"
